@@ -52,10 +52,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             return configuration;
         });
 
-        // Securing http://localhost:8080/users/*
+        // Securing http://localhost:8080/api/v1/users/*
         http.authorizeRequests()
                 .mvcMatchers(HttpMethod.POST, "/api/v1/users/authenticate").authenticated()
                 .mvcMatchers(HttpMethod.POST, "/api/v1/users/register").anonymous();
+
+        // Securing http://localhost:8080/api/v1/tasks/*
+        http.authorizeRequests()
+                .antMatchers("/api/v1/tasks/*").authenticated();
+
     }
 
     @Override
