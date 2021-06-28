@@ -28,7 +28,6 @@ public class TaskService {
         Task task = new Task(
                 null,
                 taskRequest.getTitle(),
-                taskRequest.getDate(),
                 taskRequest.getTime(),
                 taskRequest.getImportant(),
                 user
@@ -49,7 +48,6 @@ public class TaskService {
         Task updatedTask = new Task(
                 id,
                 taskRequest.getTitle(),
-                taskRequest.getDate(),
                 taskRequest.getTime(),
                 taskRequest.getImportant(),
                 user

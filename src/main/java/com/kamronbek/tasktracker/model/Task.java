@@ -21,9 +21,6 @@ public class Task {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "date")
-    private String date;
-
     @Column(name = "time")
     private String time;
 
