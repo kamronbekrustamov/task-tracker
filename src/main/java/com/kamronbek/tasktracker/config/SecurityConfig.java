@@ -59,7 +59,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Securing http://localhost:8080/api/v1/tasks/*
         http.authorizeRequests()
-                .antMatchers("/api/v1/tasks/*").authenticated();
+                .mvcMatchers(HttpMethod.GET, "/api/v1/tasks").authenticated()
+                .mvcMatchers(HttpMethod.POST, "/api/v1/tasks").authenticated()
+                .mvcMatchers(HttpMethod.PUT, "/api/v1/tasks/*").authenticated()
+                .mvcMatchers(HttpMethod.DELETE, "/api/v1/tasks*").authenticated();
+
 
     }
 
